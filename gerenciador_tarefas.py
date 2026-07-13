@@ -5,15 +5,16 @@ Marcar uma tarefa como concluída.
 Remover uma tarefa.
 Sair.
 """
-#import os
-
-
+import os
 
 lista_tarefas = []
-lista_tarefas.append('[ ]a')
-lista_tarefas.append('[ ]b')
-lista_tarefas.append('[ ]c')
-lista_tarefas.append('[ ]d')
+
+arquivo = "lista_de_tarefas.txt"
+if os.path.exists("lista_de_tarefas.txt"):
+    with open(arquivo, "r", encoding="utf-8") as f:
+        for linha in f:
+            lista_tarefas.append(linha.strip())
+
 
 def iten(mensagem):
     return input(f'Que iten deseja {mensagem} \n')
@@ -66,3 +67,7 @@ while True:
     elif opcao < 1 or opcao > 5:
         print(f"opção invalida {opcao}")
     opcao_selecionada(opcao)
+
+with open("lista_de_tarefas.txt", "w", encoding="utf-8") as f:
+    for i, nome in enumerate(lista_tarefas, start=1):
+        f.write(f"{nome}\n")

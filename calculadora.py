@@ -11,6 +11,14 @@ def menu(opcao):
     else:
         return('Opcao invalida!')
 
+def ler_numero(mensagem):
+    while True:
+        try:
+            return int(input(mensagem))
+        except ValueError:
+            print("Isso não é um número")
+
+
 def somar(numero_um, numero_dois):
     return(numero_um + numero_dois)
 
@@ -21,9 +29,11 @@ def multiplicar(numero_um, numero_dois):
     return (numero_um * numero_dois)
 
 def dividir(numero_um, numero_dois):
-    if numero_dois == 0:
+    try:
+        return(numero_um / numero_dois)
+    except ZeroDivisionError:
         return('Impossivel dividir por 0')
-    return float(numero_um / numero_dois)
+
 
 while True:
     os.system('cls')
@@ -31,13 +41,14 @@ while True:
     print('CALCULADORA')
     print('*'*60)
 
-    opcao = int(input('1. Somar \n2. Subtrair \n3. Multiplicar \n4. Dividir \n5. Sair\n'))
-    numero_um = int(input('Número: '))
-    numero_dois = int(input('Número: '))
+    opcao = ler_numero("1. Somar \n2. Subtrair \n3. Multiplicar \n4. Dividir \n5. Sair\n")
 
     if opcao == 5:
         break
 
+    numero_um = ler_numero('Número: ')
+    numero_dois = ler_numero('Número: ')   
     resultado = menu(opcao)
+
     print(f'Resultado: {resultado}')
     input('...')

@@ -1,0 +1,14 @@
+[
+  {
+    "Tarefa": "Estudar",
+    "Concluida": true
+  },
+  {
+    "Tarefa": "academia",
+    "Concluida": false
+  },
+  {
+    "Tarefa": "tratar os gatos",
+    "Concluida": true
+  }
+]

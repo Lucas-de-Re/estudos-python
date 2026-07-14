@@ -21,8 +21,8 @@ def menu():
                                 "2. Listar as tarefas.\n"
                                 "3. Marcar uma tarefa como concluída.\n"
                                 "4. Remover uma tarefa.\n" \
-                                "5. Salvar TXT.\n"
-                                "6. Sair\n"))
+                                "5. Salvar.\n"
+                                "6. Sair.\n"))
             return opcoes
         except ValueError:
             print("Opção invalida! Precisa ser um número.")
@@ -87,6 +87,7 @@ def opcao_selecionada(opcao):
                     print(resposta)
 
         case 4: #remove
+            os.system('cls')
             validar = lista_tarefas_zerada()
             if validar:
                 texto = int(iten("remover"))

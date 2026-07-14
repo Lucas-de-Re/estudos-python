@@ -1,8 +1,9 @@
 import gastos
+import armazenamento
 def menu():
     while True:
         try:
-            return(int(input("OPÇÕES"
+            return(int(input("OPÇÕES\n\n"
                             "1. Inserir gasto\n" \
                             "2. Listar gasto\n" \
                             "3. Remover gasto\n" \
@@ -13,14 +14,18 @@ def menu():
 def validador_de_opcoes(opcao_selecionada):
     while True:
         if   opcao_selecionada == 1:
-            gastos.adicionar_gasto
-            print("gasto adicionado")
+            mensagem = gastos.adicionar_gasto()
+            print(mensagem)
+            break
         elif opcao_selecionada == 2:
-            pass
+            mensagem = gastos.mostrar_gastos()
+            input("Precisone uma tecla para continuar....")
+            break
         elif opcao_selecionada == 3:
             pass
         elif opcao_selecionada == 4:
-            pass
+            armazenamento.save()
+            break
         elif opcao_selecionada == 5:
             pass
         else:

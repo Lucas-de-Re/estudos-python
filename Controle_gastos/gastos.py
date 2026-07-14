@@ -9,12 +9,20 @@ def ler_gasto():    #1. Almoço - R$ 25.00 (comida)
             break
         except ValueError:
             print("Precisa ser um valor em números>>>")
-    return {"Descricao": descricao, "Motivo": motivo, "Valor": valor}
+    return{"Descrição": descricao, "Motivo": motivo, "Valor": valor}
 
 
 def adicionar_gasto():
     gasto = ler_gasto()
     armazenamento.controle_de_gastos.append(gasto)
+    return("gasto adicionado\n")
 
 def mostrar_gastos():
-    pass
+    for i, t in enumerate (armazenamento.controle_de_gastos, start=1):
+        print(f"{i}. {t['Descrição']} - {t['Motivo']} - R$ {t['Valor']:.2f}")
+
+
+
+"""for i, t in enumerate(lista_tarefas, start=1):
+                    marcador = "[X]" if t ["Concluida"] else "[ ]"
+                    print(f"{i}. {marcador} {t['Tarefa']}")   """     

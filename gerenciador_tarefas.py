@@ -79,7 +79,7 @@ def opcao_selecionada(opcao):
                 validar = valida_tamanho(texto)
                 if not validar:
                     print(f"Não tem o iten {texto} na lista")
-                elif validar:
+                else:
                     resposta = concluido(texto)
                     print(resposta)
 
@@ -90,7 +90,7 @@ def opcao_selecionada(opcao):
                 validar = valida_tamanho(texto)   
                 if not validar:
                     print(f"Não tem o iten {texto} na lista")
-                elif validar:
+                else:
                     resposta = remover(texto)
                     print(resposta)
 
@@ -99,10 +99,6 @@ def opcao_selecionada(opcao):
            salvar_txt()
            print('** TXT SALVO **')
                
-
-def adcionar(iten):
-    lista_tarefas.append(iten)
-
 def salvar_txt():
     with open("lista_de_tarefas.txt", "w", encoding="utf-8") as f:
         for nome in lista_tarefas:

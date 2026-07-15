@@ -8,5 +8,30 @@
     "Descrição": "Claudinho",
     "Motivo": "I.A",
     "Valor": 140.0
+  },
+  {
+    "Descrição": "Janta",
+    "Motivo": "Comida",
+    "Valor": 103.0
+  },
+  {
+    "Descrição": "Faculdade",
+    "Motivo": "Estudo",
+    "Valor": 250.0
+  },
+  {
+    "Descrição": "Acad",
+    "Motivo": "Saude",
+    "Valor": 300.0
+  },
+  {
+    "Descrição": "Ração",
+    "Motivo": "Animais estimação",
+    "Valor": 300.0
+  },
+  {
+    "Descrição": "Fut",
+    "Motivo": "Espote",
+    "Valor": 53.0
   }
 ]

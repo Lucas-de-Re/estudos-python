@@ -12,21 +12,66 @@ def menu():
         except ValueError:
             print("Opcao deve ser um número!")
 def validador_de_opcoes(opcao_selecionada):
+    if  opcao_selecionada == 1: #Adicionar
+        mensagem = gastos.adicionar_gasto()
+        print(mensagem)
+        input("Precisone uma tecla para continuar....")
+    elif opcao_selecionada == 2: #Mostrar
+        mensagem = gastos.mostrar_gastos()
+        print(mensagem)
+        input("Precisone uma tecla para continuar....")
+    elif opcao_selecionada == 3: #Remover
+        mensagem = gastos.remover_gasto()
+        print(mensagem)
+        input("Precisone uma tecla para continuar....")
+    elif opcao_selecionada == 4: #Salvar
+        armazenamento.save()
+        input("Precisone uma tecla para continuar....")
+    else:
+        print("Opção invalida")
+        input("Precisone uma tecla para continuar....")
+
+
+"""
+import gastos
+import armazenamento
+
+PAUSA = "Pressione uma tecla para continuar..."
+SAIR = 5
+
+ACOES = {
+    1:    ("Inserir gasto",  gastos.adicionar_gasto),
+    2:    ("Listar gastos",  gastos.mostrar_gastos),
+    3:    ("Remover gasto",  gastos.remover_gasto),
+    4:    ("Salvar",         armazenamento.save),
+    SAIR: ("Sair",           None),
+}
+
+
+def menu():
+    #Mostra o menu e devolve uma opção válida
+    print("OPÇÕES\n")
+    for numero, (rotulo, _) in ACOES.items():
+        print(f"{numero}. {rotulo}")
+
     while True:
-        if   opcao_selecionada == 1:
-            mensagem = gastos.adicionar_gasto()
-            print(mensagem)
-            break
-        elif opcao_selecionada == 2:
-            mensagem = gastos.mostrar_gastos()
-            input("Precisone uma tecla para continuar....")
-            break
-        elif opcao_selecionada == 3:
-            pass
-        elif opcao_selecionada == 4:
-            armazenamento.save()
-            break
-        elif opcao_selecionada == 5:
-            pass
-        else:
-            print("Opção invalida")
+        try:
+            escolha = int(input("\nEscolha: "))
+        except ValueError:
+            print("A opção deve ser um número.")
+            continue
+
+        if escolha in ACOES:
+            return escolha
+        print("Opção inválida.")
+
+
+def executar(opcao):
+    #Executa a ação correspondente à opção
+    _, acao = ACOES[opcao]
+    mensagem = acao()
+    if mensagem:
+        print(mensagem)
+    input(PAUSA)
+
+"""

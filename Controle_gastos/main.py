@@ -8,4 +8,4 @@ while True:
     if opcao_selecionada == 5:
         armazenamento.save()
         break
-    opcoes.validador_de_opcoes(opcao_selecionada)
+    opcoes.executar(opcao_selecionada)

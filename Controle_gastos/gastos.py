@@ -27,14 +27,19 @@ def mostrar_gastos():
 
 def remover_gasto():
     while True:
+        if  len(armazenamento.controle_de_gastos) == 0:
+            print("lista zerada")
+            break
         try:
+
+
             escolha = int(input("Que iten gostaria de remover \n"))
-            if escolha-1 > len(armazenamento.controle_de_gastos) or escolha < 1:
-                print("Escolha invalida")
+            if escolha < 1 or escolha > len( armazenamento.controle_de_gastos):
+                print("Escolha inválida")
             else:
                 armazenamento.controle_de_gastos.pop(escolha-1)
                 return("Iten removido")
         except ValueError:
-            print(f"Valor tem que ser númerico, o valor deve ser de 1 a {len(armazenamento.controle_de_gastos)+1}")
+            print(f"Valor tem que ser númerico, o valor deve ser de 1 a {len(armazenamento.controle_de_gastos)}")
         
         
